@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"reflect"
 )
 
 func init() {
@@ -16,10 +15,20 @@ type Person struct {
 }
 
 func main() {
-	me := Person{
-		FirstName: "Nuttapon",
-		LastName:  "Yodkaew",
-		Age:       33,
+	people := []Person{
+		Person{
+			FirstName: "Nuttapon",
+			LastName:  "Yodkaew",
+			Age:       33,
+		},
+		Person{
+			FirstName: "Atcha",
+			LastName:  "Yodkaew",
+			Age:       32,
+		},
 	}
-	fmt.Printf("%+v %s\n", me, reflect.TypeOf(me))
+
+	for _, v := range people {
+		fmt.Printf("%+v\n", v)
+	}
 }
