@@ -2,9 +2,7 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/yapadubpadoo/gotools"
-	"github.com/yapadubpadoo/gotools/stringhelper"
+	"reflect"
 )
 
 func init() {
@@ -12,8 +10,16 @@ func init() {
 }
 
 func main() {
-	fmt.Println("Hello World")
-	fmt.Println(gotools.Add(10, 2))
-	fmt.Println(stringhelper.Upper("cat"))
-	fmt.Println(stringhelper.Concat("cat", "dog"))
+	const (
+		myFirstname = "Nuttapon"
+		myLastname  = "Yodkaew"
+	)
+	a := "hello"
+	b := 10
+	c := 10.109999999999999999999999999999999
+	d := true
+	fmt.Printf("%s %d %f %v\n", a, b, c, d)
+
+	fmt.Printf("%s is %s\n", a, reflect.TypeOf(a))
+
 }
