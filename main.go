@@ -2,20 +2,24 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 )
 
 func init() {
 	fmt.Println("Init!")
 }
 
-func main() {
-	names := map[string]int{
-		"a": 20,
-		"b": 30,
-		"c": 40,
-	}
+type Person struct {
+	FirstName string
+	LastName  string
+	Age       int
+}
 
-	for k, v := range names {
-		fmt.Println(k, "->", v)
+func main() {
+	me := Person{
+		FirstName: "Nuttapon",
+		LastName:  "Yodkaew",
+		Age:       33,
 	}
+	fmt.Printf("%+v %s\n", me, reflect.TypeOf(me))
 }
