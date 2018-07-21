@@ -9,7 +9,13 @@ func init() {
 }
 
 func main() {
-	defer fmt.Println("World")
-	defer fmt.Println("Middle")
-	fmt.Println("Hello")
+	names := map[string]int{
+		"a": 20,
+		"b": 30,
+		"c": 40,
+	}
+
+	for k, v := range names {
+		fmt.Println(k, "->", v)
+	}
 }
