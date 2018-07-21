@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"reflect"
 )
 
 func init() {
@@ -10,16 +9,15 @@ func init() {
 }
 
 func main() {
-	const (
-		myFirstname = "Nuttapon"
-		myLastname  = "Yodkaew"
-	)
-	a := "hello"
-	b := 10
-	c := 10.109999999999999999999999999999999
-	d := true
-	fmt.Printf("%s %d %f %v\n", a, b, c, d)
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
 
-	fmt.Printf("%s is %s\n", a, reflect.TypeOf(a))
+	a := [...]int{1, 2, 3, 4, 5}
+	b := []int{1, 2, 3, 4, 5}
 
+	for i := 0; i < len(a); i++ {
+		fmt.Println(a[i])
+		b = append(b, a[i])
+	}
 }
